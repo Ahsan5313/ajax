@@ -1,0 +1,2 @@
+ <h1>This is AJAX</h1>
+      <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione nam eveniet amet sit, molestias maiores non provident cum autem recusandae magni porro, et ad unde, ipsa doloremque nulla dolor architecto voluptatibus aspernatur nesciunt. Voluptatem consectetur, ut debitis suscipit amet id a aut quos, sapiente vero consequuntur saepe ullam? Eius, cupiditate!</P>
