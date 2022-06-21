@@ -1,83 +1,83 @@
 
-// function loadDate(){
+function loadDate(){
 
-//     const xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();
    
-//     xhr.onload = function(){
+    xhr.onload = function(){
 
-//         const demo = document.getElementById('demo');
-//         demo.innerHTML = xhr.responseText;
-//     }
+        const demo = document.getElementById('demo');
+        demo.innerHTML = xhr.responseText;
+    }
 
-//     xhr.open('GET', '../demo/demo.txt');
+    xhr.open('GET', '../demo/demo.txt');
 
-//     xhr.send();
-// }
+    xhr.send();
+}
 
-// const getBtn = document.getElementById('get-btn');
-// const sentBtn = document.getElementById('sent-btn');
+const getBtn = document.getElementById('get-btn');
+const sentBtn = document.getElementById('sent-btn');
 
 
 
-// const sentRequest = function(method, url, data){
+const sentRequest = function(method, url, data){
 
-//    const promise =  new Promise((resolve, reject) => {
+   const promise =  new Promise((resolve, reject) => {
 
-//    const xhr = new XMLHttpRequest();
+   const xhr = new XMLHttpRequest();
    
-//    xhr.open(method, url);
-//    xhr.responseType = 'json';
-//    xhr.setRequestHeader('Content-Type', 'application/json');
-//    xhr.send(data);
+   xhr.open(method, url);
+   xhr.responseType = 'json';
+   xhr.setRequestHeader('Content-Type', 'application/json');
+   xhr.send(data);
   
-//    xhr.onload = function(){
+   xhr.onload = function(){
 
-//      if(xhr.status >= 400){
+     if(xhr.status >= 400){
 
-//       reject(xhr.response);
-//      }else{
+      reject(xhr.response);
+     }else{
 
-//       resolve(xhr.response)
-//      }
+      resolve(xhr.response)
+     }
    
-//    };
+   };
 
-//    });
+   });
 
-//    return promise;
+   return promise;
             
-// }
+}
 
-// const getDate = function(){
+const getDate = function(){
 
-//    sentRequest('GET', 'https://jsonplaceholder.typicode.com/todos/1')
-//    .then((responseData) => {
+   sentRequest('GET', 'https://jsonplaceholder.typicode.com/todos/1')
+   .then((responseData) => {
 
-//       console.log(responseData)
-//    })
-// };
+      console.log(responseData)
+   })
+};
 
-// const sentDate = function(){
+const sentDate = function(){
 
-//        sentRequest('POST', 'https://jsonplaceholder.typicode.com/posts', JSON.stringify({
+       sentRequest('POST', 'https://jsonplaceholder.typicode.com/posts', JSON.stringify({
 
-//          title: 'foo',
-//          body: 'bar',
-//          userId: 1 
+         title: 'foo',
+         body: 'bar',
+         userId: 1 
 
-//        }))
-//        .then((responseData) => {
+       }))
+       .then((responseData) => {
 
-//            console.log(responseData)
-//        }).catch((err) => {
+           console.log(responseData)
+       }).catch((err) => {
          
-//          console.log(err)
-//        })
+         console.log(err)
+       })
 
-// };
+};
 
-// getBtn.addEventListener('click', getDate);
-// sentBtn.addEventListener('click', sentDate);
+getBtn.addEventListener('click', getDate);
+sentBtn.addEventListener('click', sentDate);
 
 const para = document.querySelector('.para');
 const btn = document.querySelector('#btn');
@@ -86,35 +86,35 @@ const url = 'https://jsonplaceholder.typicode.com/users';
 
 
 
-// const getData = function(){
+const getData = function(){
 
-//   const xhr = new XMLHttpRequest();
+  const xhr = new XMLHttpRequest();
 
-//   xhr.onload = function(){
+  xhr.onload = function(){
 
-//     para.innerHTML = xhr.response;
-//   };
-//   xhr.open('GET', url);
-//   xhr.send();
+    para.innerHTML = xhr.response;
+  };
+  xhr.open('GET', url);
+  xhr.send();
   
-// }
+}
 
-//  btn.addEventListener('click', getData)
+ btn.addEventListener('click', getData)
 
-// btn.addEventListener('click', function(){
+btn.addEventListener('click', function(){
 
-//   fetch(url)
-//   .then((res) => res.json())
-//   .then((data) => {
+  fetch(url)
+  .then((res) => res.json())
+  .then((data) => {
 
-//     data.forEach((user) => {
+    data.forEach((user) => {
       
-//       para.innerHTML = `${para.innerHTML} <br> Name is: ${user.name}`
-//     });
-//   })
-//   .catch((err) => console.log(err));
+      para.innerHTML = `${para.innerHTML} <br> Name is: ${user.name}`
+    });
+  })
+  .catch((err) => console.log(err));
 
-// });
+});
 
 import axios from 'axios';
 
