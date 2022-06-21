@@ -78,3 +78,44 @@ const sentDate = function(){
 
 getBtn.addEventListener('click', getDate);
 sentBtn.addEventListener('click', sentDate);
+
+const para = document.querySelector('.para');
+const btn = document.querySelector('#btn');
+const url = 'https://jsonplaceholder.typicode.com/users';
+
+
+
+
+const getData = function(){
+
+  const xhr = new XMLHttpRequest();
+
+  xhr.onload = function(){
+
+    para.innerHTML = xhr.response;
+  };
+  xhr.open('GET', url);
+  xhr.send();
+  
+}
+
+ btn.addEventListener('click', getData)
+
+btn.addEventListener('click', function(){
+
+  fetch(url)
+  .then((res) => res.json())
+  .then((data) => {
+
+    data.forEach((user) => {
+      
+      para.innerHTML = `${para.innerHTML} <br> Name is: ${user.name}`
+    });
+  })
+  .catch((err) => console.log(err));
+
+});
+
+import axios from 'axios';
+
+console.log(axios)
